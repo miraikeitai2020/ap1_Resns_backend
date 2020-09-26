@@ -1,4 +1,4 @@
-module ResnsBackend-api1
+module ResnsBackend-api2
 
 go 1.13
 

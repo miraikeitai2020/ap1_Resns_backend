@@ -1,7 +1,7 @@
 package server
 
 import (
-	"ResnsBackend-api3/pkg/server/controller"
+	"ResnsBackend-api4/pkg/server/controller"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,6 +12,8 @@ var (
 
 func init() {
 	Server = gin.Default()
-	//記事のデータ送信
-	Server.GET("/article/send", controller.HandleAtricleSend())
+	//記事のコメント送信
+	Server.GET("/comment/send",controller.HandleCommentSend() )
+	//記事のコメント更新
+	Server.GET("/comment/update",controller.HandleCommentUpdate() )
 }
