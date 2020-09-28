@@ -13,7 +13,7 @@ var (
 func init() {
 	Server = gin.Default()
 	//お気に入りリストの記事追加
-	Server.GET("/list/add", controller.HandleListAdd())
+	Server.POST("/list/add", controller.HandleListAdd())
 	//お気に入りリストの記事削除
-	Server.GET("/list/delete", controller.HandleListDelete())
+	Server.POST("/list/delete", controller.HandleListDelete())
 }
