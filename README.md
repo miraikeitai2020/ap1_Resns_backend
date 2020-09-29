@@ -18,3 +18,12 @@ Resnsのバックエンド
 
 #### api6
 リストに記事の追加、削除のapi
+
+Mac
+```cassandraql
+export MYSQL_USER=root
+MYSQL_PASSWORD=rootpassword
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_DATABASE=resns_app
+```
