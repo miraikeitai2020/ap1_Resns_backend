@@ -2,11 +2,12 @@ package middleware
 
 import (
 "github.com/gin-gonic/gin"
+	"net/http"
 )
 
 // Authenticate ユーザ認証を行ってContextへユーザID情報を保存する
-func Authenticate(ginNextMethod gin.HandlerFunc) gin.HandlerFunc {
+func HandleAuthenticate() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ginNextMethod(c)
+		c.JSON(http.StatusOK,"" )
 	}
 }
