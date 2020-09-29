@@ -2,13 +2,14 @@ version: '3'
 services:
   mysql:
     image: mysql:5.7
+    restart: always
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
-      MYSQL_DATABASE: 'summer'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+      MYSQL_DATABASE: 'resns_app'
       MYSQL_USER: 'resns'
       MYSQL_PASSWORD: 'resns'
-      MYSQL_ROOT_PASSWORD: resns_admin
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
