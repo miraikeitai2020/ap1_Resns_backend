@@ -15,6 +15,6 @@ func HandleAtricleSend()gin.HandlerFunc {
 		}
 		// // 生成した認証トークンを返却
 		c.JSON(http.StatusOK, view.Article{Article_id: article.Article_id, Image_path: article.Image_path,
-			Title: article.Title, Context: article.Context, Genre: article.Genre, Tag: article.Tag})
+			Title: article.Title, Context: article.Context,Genre:article.Genre, Nice: article.Nice,EraYear:article.EraYear,EraMonth:article.EraMonth})
 	}
 }
