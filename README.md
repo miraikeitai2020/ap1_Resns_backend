@@ -19,6 +19,9 @@ Resnsのバックエンド
 #### api6
 リストに記事の追加、削除のapi
 
+#### DB
+性別 0:男 1:女  
+
 Mac
 ```
 $ export MYSQL_USER=root \
