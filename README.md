@@ -39,3 +39,10 @@ $ SET MYSQL_HOST=192.168.99.100
 $ SET MYSQL_PORT=3306
 $ SET MYSQL_DATABASE=resns_app
 ```
+
+#### DBの補足
+ユーザーのプロフィール  
+性別 男:0 女:1
+
+記事のジャンルは数字で管理  
+例)   スポーツ=1  ドラマ＝2 
