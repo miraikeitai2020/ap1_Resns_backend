@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
 
 	// blank import for MySQL driver
 	_ "github.com/go-sql-driver/mysql"
@@ -19,15 +18,15 @@ var Conn *sql.DB
 func init() {
 	/* ===== データベースへ接続する. ===== */
 	// ユーザ
-	user := os.Getenv("MYSQL_USER")
+	user := "resns" //os.Getenv("MYSQL_USER")
 	// パスワード
-	password := os.Getenv("MYSQL_PASSWORD")
+	password := "resns" //os.Getenv("MYSQL_PASSWORD")
 	// 接続先ホスト
-	host := os.Getenv("MYSQL_HOST")
+	host := "192.168.99.100" //os.Getenv("MYSQL_HOST")
 	// 接続先ポート
-	port := os.Getenv("MYSQL_PORT")
+	port := "3306" //os.Getenv("MYSQL_PORT")
 	// 接続先データベース
-	database := os.Getenv("MYSQL_DATABASE")
+	database := "resns_app" //os.Getenv("MYSQL_DATABASE")
 
 	// 接続情報は以下のように指定する.
 	// user:password@tcp(host:port)/database
