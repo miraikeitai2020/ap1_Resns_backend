@@ -22,7 +22,8 @@ func init() {
 	// パスワード
 	password := "resns" //os.Getenv("MYSQL_PASSWORD")
 	// 接続先ホスト
-	host := "192.168.99.100" //os.Getenv("MYSQL_HOST")
+	host := "127.0.0.1" //Mac
+	//host := "192.168.99.100" //os.Getenv("MYSQL_HOST")
 	// 接続先ポート
 	port := "3306" //os.Getenv("MYSQL_PORT")
 	// 接続先データベース

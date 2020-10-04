@@ -20,7 +20,7 @@ func HandleNiceSend() gin.HandlerFunc {
 			c.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
-		nice, err := model.GetNice(addNice.Article_id)
+		nice, err := model.GetAndUpdateNices(addNice.Article_id)
 		if err != nil {
 			log.Println(err)
 			c.JSON(http.StatusInternalServerError, "Internal Server Error")
