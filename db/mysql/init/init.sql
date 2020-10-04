@@ -143,3 +143,9 @@ INSERT INTO `articles_comments` VALUES ('1','2v43d6ef-a83d-57d0-f33d-b5d78ncj4a5
 
 INSERT INTO `users_list` VALUES ('1','b1018085@fun.ac.jp','1');
 INSERT INTO `users_list` VALUES ('2','b1018085@fun.ac.jp','4');
+
+INSERT INTO `articles_comments` VALUES ('1','feeafa01-38ed-48a1-be98-4d926db542e2','1コメ','b1018085@fun.ac.jp','https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jp');
+INSERT INTO `articles_comments` VALUES ('1','389489a7-c6cc-42f1-a0d3-cfd497941585','2コメ','b1018085@fun.ac.jp','https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jp');
+INSERT INTO `articles_comments` VALUES ('1','3bee2b4e-e179-47cd-a4b6-acd8092c4e4a','3コメ','b1018085@fun.ac.jp','https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jp');
+INSERT INTO `articles_comments` VALUES ('1','6c928198-1419-4b03-877e-99b37e1eb460','4コメ','b1018085@fun.ac.jp','https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jp');
+INSERT INTO `articles_comments` VALUES ('1','ce3137ea-1e10-43a2-884f-fa0b13971f03','5コメ','b1018085@fun.ac.jp','https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jp');
