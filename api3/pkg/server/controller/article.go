@@ -13,6 +13,13 @@ var(
 
 )
 
+func HandleAtricleSend()gin.HandlerFunc{
+	return func(c *gin.Context) {
+		// // 生成した認証トークンを返却
+		c.JSON(http.StatusOK,"" )
+	}
+}
+
 func HandleAtricleDetailSend()gin.HandlerFunc {
 	return func(c *gin.Context) {
 		err:=c.ShouldBindJSON(&request)
@@ -28,12 +35,5 @@ func HandleAtricleDetailSend()gin.HandlerFunc {
 		// // 生成した認証トークンを返却
 		c.JSON(http.StatusOK, view.Article{Title:articles.Title,ImagePath:articles.ImagePath,Context:articles.Context,Nice:articles.Nice})
 		//c.JSON(200,"hello ")
-	}
-}
-
-func HandleAtricleSend()gin.HandlerFunc{
-	return func(c *gin.Context) {
-		// // 生成した認証トークンを返却
-		c.JSON(http.StatusOK,"" )
 	}
 }

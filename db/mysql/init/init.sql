@@ -108,11 +108,21 @@ ENGINE = InnoDB
 COMMENT = '記事にいいねした人';
 
 ---- insert ----
-INSERT INTO `articles_contents` VALUES ('1', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample1','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',3,46,2020,6);
-INSERT INTO `articles_contents` VALUES ('2', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg','Title_sample2', 'sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2',4,100,2000,5 );
-INSERT INTO `articles_contents` VALUES ('3', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg','Title_sample3', 'sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3',1,2,1999,10 );
-INSERT INTO `articles_contents` VALUES ('4', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg', 'Title_sample4','sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4',2,0,1940,6);
-INSERT INTO `articles_contents` VALUES ('5', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg', 'Title_sample5','sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5',5,123,2006,2 );
+INSERT INTO `articles_contents` VALUES ('1', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample1','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,46,2020,6);
+INSERT INTO `articles_contents` VALUES ('6', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample2','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,4,2019,12);
+INSERT INTO `articles_contents` VALUES ('7', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample3','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,6,2018,11);
+INSERT INTO `articles_contents` VALUES ('8', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample4','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,146,2017,3);
+INSERT INTO `articles_contents` VALUES ('9', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample5','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,416,2016,7);
+INSERT INTO `articles_contents` VALUES ('10', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample6','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,11,2015,8);
+INSERT INTO `articles_contents` VALUES ('11', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample7','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,43,2014,9);
+INSERT INTO `articles_contents` VALUES ('12', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample8','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,73,2013,1);
+INSERT INTO `articles_contents` VALUES ('13', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample9','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,2,2012,2);
+INSERT INTO `articles_contents` VALUES ('14', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample10','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,12,2011,3);
+INSERT INTO `articles_contents` VALUES ('15', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/IMG_7004.jpeg', 'Title_sample11','五稜郭で飲んだ帰りsample1sample1sample1sample1sample1sample1sample1sample1',1,73,2010,7);
+INSERT INTO `articles_contents` VALUES ('2', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg','Title_sample5', 'sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2sample2',2,100,2000,5 );
+INSERT INTO `articles_contents` VALUES ('3', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg','Title_sample10', 'sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3sample3',3,2,1999,10 );
+INSERT INTO `articles_contents` VALUES ('4', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg', 'Title_sample15','sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4sample4',4,0,1940,6);
+INSERT INTO `articles_contents` VALUES ('5', 'https://initial-practice.s3-ap-northeast-1.amazonaws.com/sample.jpg', 'Title_sample20','sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5sample5',5,123,2006,2 );
 
 INSERT INTO `users_info` VALUES ('b1018085@fun.ac.jp', 'ed968e840d10d2d313a870bc131a4e2c311d7ad09bdf32b3418147221f51a6e2');
 
