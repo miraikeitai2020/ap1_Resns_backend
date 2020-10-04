@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `resns_app`.`articles_contents` (
 `context` VARCHAR(256) NOT NULL COMMENT '記事の内容',
 `genre` int NOT NULL COMMENT '記事のジャンル',
 `nice` int NOT NULL COMMENT 'いいね数',
-`age_year` int NOT NULL COMMENT '年代(年)',
-`age_month` int NOT NULL COMMENT '年代(月)',
+`era_year` int NOT NULL COMMENT '年代(年)',
+`era_month` int NOT NULL COMMENT '年代(月)',
 PRIMARY KEY (`article_id`)
 )
 ENGINE = InnoDB
