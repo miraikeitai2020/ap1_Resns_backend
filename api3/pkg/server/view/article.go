@@ -1,6 +1,11 @@
 package view
 
 //
+type ArticleRequest struct {
+	Genre string `json:genre`
+	Month string `json:month`
+	Year string `json:year`
+}
 type ArticleDetailRequest struct {
 	ArticleID string `json:articleID`
 }
@@ -16,5 +21,5 @@ type Article struct {
 type Comment struct {
 	UserName string `json:"userName"`
 	UserImage string `json:"userImage"`
-	Cotents string `json:"contents"`
+	Contents string `json:"contents"`
 }
