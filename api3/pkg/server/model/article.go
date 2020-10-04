@@ -3,7 +3,6 @@ package model
 import (
 	"ResnsBackend-api3/pkg/db"
 	"database/sql"
-	"fmt"
 	"log"
 )
 
