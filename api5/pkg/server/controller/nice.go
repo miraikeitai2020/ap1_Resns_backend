@@ -3,6 +3,7 @@ package controller
 import (
 	"ResnsBackend-api5/pkg/server/model"
 	"log"
+
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -29,7 +30,7 @@ func HandleNiceSend() gin.HandlerFunc {
 			log.Println(err)
 			c.JSON(http.StatusInternalServerError, gin.H{"certification": "false"})
 		}
-		// // 生成した認証トークンを返却
+		// 生成した認証トークンを返却
 		c.JSON(http.StatusOK, nice)
 	}
 }

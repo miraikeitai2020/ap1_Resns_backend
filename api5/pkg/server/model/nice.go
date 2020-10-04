@@ -3,6 +3,8 @@ package model
 import (
 	"ResnsBackend-api5/db"
 	"database/sql"
+	"fmt"
+	"log"
 )
 
 type AddNice struct {
@@ -18,11 +20,12 @@ var (
 )
 
 func GetNice(article_id string) (*Nices, error) {
-	row, _ := db.Conn.Query("SELECT nice FROM articles_contents WHERE article_id=?", article_id)
+	row:= db.Conn.QueryRow("SELECT nice FROM articles_contents WHERE article_id=?", article_id)
 	if err := row.Scan(&nice.Nice); err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}
+		log.Println(err)
 		return nil, err
 	}
 	return &nice, nil
