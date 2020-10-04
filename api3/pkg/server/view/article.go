@@ -1,13 +1,20 @@
 package view
 
-//  articleテーブルデータ
+//
+type ArticleDetailRequest struct {
+	ArticleID string `json:articleID`
+}
+//  記事テーブルデータ
 type Article struct {
-	Article_id string ` json:"article_id" `
-	Image_path string `json:"image_path" `
 	Title string `json:"title"`
+	ImagePath string `json:"imagePath" `
 	Context string `json:"context" `
-	Genre   int `json:"Genre" `
-	Nice    int `json:"Nice" `
-	EraYear int  `json:"EraYear"`
-	EraMonth int  `json:"EraMonth"`
+	Nice string `json:nice`
+	Comment []Comment `json:comments`
+}
+//  コメントテーブルデータ
+type Comment struct {
+	UserName string `json:"userName"`
+	UserImage string `json:"userImage"`
+	Cotents string `json:"contents"`
 }

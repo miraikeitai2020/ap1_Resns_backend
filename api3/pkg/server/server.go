@@ -14,4 +14,5 @@ func init() {
 	Server = gin.Default()
 	//記事のデータ送信
 	Server.GET("/article/send", controller.HandleAtricleSend())
+	Server.GET("/article/detailSend", controller.HandleAtricleDetailSend())
 }

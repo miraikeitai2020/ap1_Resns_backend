@@ -6,27 +6,38 @@ import (
 	"log"
 )
 
-//  articleテーブルデータ
+//  記事テーブルデータ
 type Article struct {
-	Article_id string ` json:"article_id" `
-	Image_path string `json:"image_path" `
-	Title string `json:"title"`
-	Context string `json:"context" `
-	Genre    int `json:"genre" `
-	Nice    int `json:"genre" `
-	EraYear int  `json:"EraYear"`
-	EraMonth int  `json:"EraMonth"`
+	ArticleID string
+	ImagePath string
+	Title string
+	Context string
+	Genre int
+	Nice string
+	EraYear int
+	EraMonth int
+}
+//  コメントテーブルデータ
+type Comment struct {
+	UserName string
+	UserImage string
+	Cotents string
 }
 
-func GetArticles()(*Article,error){
-	row := db.Conn.QueryRow("SELECT * FROM articles WHERE article_id=?",2)
+var (
+	articles Article
+)
+
+
+func GetArticles(articleID string)(*Article,error){
+	row := db.Conn.QueryRow("SELECT * FROM articles_contents WHERE article_id=?",2)
 	return convertToArticle(row)
 }
 
 // convertToUser rowデータをUserデータへ変換する
 func convertToArticle(row *sql.Row) (*Article, error) {
 	article := Article{}
-	if err := row.Scan(&article.Article_id, &article.Image_path,&article.Title, &article.Context,&article.Genre,&article.Nice,&article.EraYear,&article.EraMonth); err != nil {
+	if err := row.Scan(&article.ArticleID,&article.ImagePath,&article.Title, &article.Context,&article.Genre,&article.Nice,&article.EraYear,&article.EraMonth); err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}
