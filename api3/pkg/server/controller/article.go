@@ -3,7 +3,6 @@ package controller
 import (
 	"ResnsBackend-api3/pkg/server/view"
 	"ResnsBackend-api3/pkg/server/model"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -22,16 +21,13 @@ func HandleAtricleDetailSend()gin.HandlerFunc {
 			c.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
-		fmt.Println(request.ArticleID)
 		articles, err := model.GetArticles(request.ArticleID);
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println(articles.ArticleID)
 		// // 生成した認証トークンを返却
-		//c.JSON(http.StatusOK, view.Article{Article_id: article.Article_id, Image_path: article.Image_path,
-		//	Title: article.Title, Context: article.Context,Genre:article.Genre, Nice: article.Nice,EraYear:article.EraYear,EraMonth:article.EraMonth})
-		c.JSON(200,"hello ")
+		c.JSON(http.StatusOK, view.Article{Title:articles.Title,ImagePath:articles.ImagePath,Context:articles.Context,Nice:articles.Nice})
+		//c.JSON(200,"hello ")
 	}
 }
 

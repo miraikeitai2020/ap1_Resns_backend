@@ -8,20 +8,16 @@ import (
 
 //  記事テーブルデータ
 type Article struct {
-	ArticleID string
-	ImagePath string
 	Title string
+	ImagePath string
 	Context string
-	Genre int
 	Nice string
-	EraYear int
-	EraMonth int
 }
 //  コメントテーブルデータ
 type Comment struct {
 	UserName string
 	UserImage string
-	Cotents string
+	Contents string
 }
 
 var (
@@ -30,19 +26,19 @@ var (
 
 
 func GetArticles(articleID string)(*Article,error){
-	row := db.Conn.QueryRow("SELECT * FROM articles_contents WHERE article_id=?",2)
+	row := db.Conn.QueryRow("SELECT title,image_path,context,nice FROM articles_contents WHERE article_id=?",articleID)
 	return convertToArticle(row)
 }
 
 // convertToUser rowデータをUserデータへ変換する
 func convertToArticle(row *sql.Row) (*Article, error) {
-	article := Article{}
-	if err := row.Scan(&article.ArticleID,&article.ImagePath,&article.Title, &article.Context,&article.Genre,&article.Nice,&article.EraYear,&article.EraMonth); err != nil {
+	if err := row.Scan(&articles.Title,&articles.ImagePath,&articles.Context,&articles.Nice); err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}
 		log.Println(err)
 		return nil, err
 	}
-	return &article, nil
+	//fmt.Println(a)
+	return &articles, nil
 }
