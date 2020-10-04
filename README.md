@@ -4,7 +4,7 @@ Resnsのバックエンド
 # お約束
 
 ## プログラムを書く上で
-基本的に下記のサイトに書いてることに従います。
+基本的に下記のサイトに書いてることに従います。  
 https://golang.org/doc/effective_go.html
 
 ## Github
@@ -15,7 +15,7 @@ https://golang.org/doc/effective_go.html
   - 開発ブランチ． コードが安定し,リリース準備ができたら master へマージする. リリース前はこのブランチが最新バージョンとなる.
 - feature
   - 機能の追加. develop から分岐し, develop にマージする.
-  - feature-#{対応するissue}-{任意で詳細}
+  - feature-{任意で詳細}
 - fix
   - 現在のプロダクトのバージョンに対する変更・修正用.
   - fix-{任意で詳細}
