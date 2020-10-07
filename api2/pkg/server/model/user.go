@@ -16,8 +16,12 @@ type User struct {
 	Gender int `json:"gender" `
 }
 
-func (ctrl *Controller) SignUp(context *gin.Context) {
-	if err := context.BindJSON(&signUp); err != nil {
+type Retoken struct {
+	Token string `json:"token" `
+}
+
+func (ctrl *Controller) SetUser(context *gin.Context) {
+	if err := context.BindJSON(&SetUser); err != nil {
 		context.JSON(500, gin.H{"message": "Internal Server Error"})
 		return
 	}
@@ -28,14 +32,14 @@ func (ctrl *Controller) SignUp(context *gin.Context) {
 		return
 	}
 	restoken.Token = uuid.String()
-	if err := signUpData(signUp.Id, signUp.Name, signUp.Image, signUp.Year, signUp.Month signUp.Gender , restoken.Token); err != nil {
+	if err := UpdateUser(SetUser.Id, SetUser.Name, SetUser.Image, SetUser.Year, SetUser.Month SetUser.Gender , restoken.Token); err != nil {
 		context.JSON(http.StatusInternalServerError, "Internal Server Error")
 		return
 	}
 	context.JSON(200, restoken)
 }
 
-func signUpData(id, name, image, token string, year, month, gender int) error {
+func UpdateUser(id, name, image, token string, year, month, gender int) error {
 	stmt, err := db.Con.Prepare("INSERT INTO signUp VALUES (?,?,?)")
 	if err != nil {
 		return err
