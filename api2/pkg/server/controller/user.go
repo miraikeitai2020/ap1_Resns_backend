@@ -2,8 +2,21 @@ package controller
 
 import (
 	"net/http"
-
+	"ResnsBackend-api2/pkg/server/model"
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"log"
+	"github.com/google/uuid"
+)
+
+var (
+	user     	model.User
+	name		model.User
+	image		model.User
+	year		model.User
+	month		model.User
+	gender		model.User
+	restoken	model.Restoken
 )
 
 //ユーザー情報
@@ -13,7 +26,6 @@ func HandleUserSet() gin.HandlerFunc {
 			context.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
-		
 		uuid, err := uuid.NewRandom()
 		if err != nil {
 			context.JSON(http.StatusInternalServerError, "AuthToken is error")
@@ -39,6 +51,6 @@ func HandleUserUpdate(id, name, image, token string, year, month, gender int) gi
 		_, err = stmt.Exec(id, name, image, token, year, month, gender)
 		return err
 		// // 生成した認証トークンを返却
-		c.JSON(http.StatusOK,"" )
+		c.JSON(http.StatusOK,"UserUpdate Complete" )
 	}
 }
