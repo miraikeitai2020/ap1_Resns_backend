@@ -1,28 +1,22 @@
 package controller
 
 import (
-	"net/http"
 	"ResnsBackend-api2/pkg/server/model"
-	"fmt"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
-	"log"
 	"github.com/google/uuid"
 )
 
 var (
-	user     	model.User
-	name		model.User
-	image		model.User
-	year		model.User
-	month		model.User
-	gender		model.User
-	restoken	model.Restoken
+	user model.User
+	//restoken model.Retoken
 )
 
 //ユーザー情報
 func HandleUserSet() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		if err := context.BindJSON(&HandleUserSet); err != nil {
+	return func(context *gin.Context) {
+		if err := context.BindJSON(&user); err != nil {
 			context.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
@@ -31,26 +25,30 @@ func HandleUserSet() gin.HandlerFunc {
 			context.JSON(http.StatusInternalServerError, "AuthToken is error")
 			return
 		}
-		restoken.Token = uuid.String()
-		if err := HandleUserUpdate(HandleUserSet.Id, HandleUserSet.Name, HandleUserSet.Image, HandleUserSet.Year, HandleUserSet.Month HandleUserSet.Gender , restoken.Token); err != nil {
+		user.Id = uuid.String()
+
+		if err := model.Save(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender); err != nil {
 			context.JSON(http.StatusInternalServerError, "Internal Server Error")
 			return
 		}
 		// // 生成した認証トークンを返却
-		c.JSON(http.StatusOK,"" )
-	}	
-
+		context.JSON(http.StatusOK, "")
+	}
 }
+
 //ユーザー情報更新
-func HandleUserUpdate(id, name, image, token string, year, month, gender int) gin.HandlerFunc {
-	return func(c *gin.Context) {
-		stmt, err := db.Con.Prepare("INSERT INTO UserSet VALUES (?,?,?)")
-		if err != nil {
-			return err
+func HandleUserUpdate(id, name, image string, year, month, gender int, token string) gin.HandlerFunc {
+	return func(context *gin.Context) {
+		if err := context.BindJSON(&user); err != nil {
+			context.JSON(500, gin.H{"message": "Internal Server Error"})
+			return
 		}
-		_, err = stmt.Exec(id, name, image, token, year, month, gender)
-		return err
+
+		if err := model.Update(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender); err != nil {
+			context.JSON(http.StatusInternalServerError, "Internal Server Error")
+			return
+		}
 		// // 生成した認証トークンを返却
-		c.JSON(http.StatusOK,"UserUpdate Complete" )
+		context.JSON(http.StatusOK, "")
 	}
 }
