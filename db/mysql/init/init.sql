@@ -99,7 +99,7 @@ COMMENT = '記事へのコメント';
 CREATE TABLE IF NOT EXISTS `resns_app`.`articles_nice_status` (
 `nice_id` VARCHAR(64) NOT NULL COMMENT 'NiceID',
 `article_id` VARCHAR(64) NOT NULL COMMENT '記事識別ID',
-`user_id` VARCHAR(16) NOT NULL COMMENT 'ユーザID',
+`user_id` VARCHAR(64) NOT NULL COMMENT 'ユーザID',
 PRIMARY KEY (`nice_id`),
 FOREIGN KEY (`user_id`)
     REFERENCES `resns_app`.`users` (`id`)
@@ -143,3 +143,6 @@ INSERT INTO `articles_comments` VALUES ('1','2v43d6ef-a83d-57d0-f33d-b5d78ncj4a5
 
 INSERT INTO `users_list` VALUES ('1','b1018085@fun.ac.jp','1');
 INSERT INTO `users_list` VALUES ('2','b1018085@fun.ac.jp','4');
+INSERT INTO `users_list` VALUES ('3','b1018085@fun.ac.jp','5');
+
+INSERT INTO `articles_nice_status` VALUES ('1','1','b1018085@fun.ac.jp');

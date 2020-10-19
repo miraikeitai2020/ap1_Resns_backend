@@ -19,7 +19,8 @@ func HandleNiceSend() gin.HandlerFunc {
 			c.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
-		nice, err := model.GetAndUpdateNices(addNice.Article_id)
+
+		nice, err := model.GetAndUpdateNices(addNice.Article_id, addNice.User_id)
 		if err != nil {
 			log.Println(err)
 			c.JSON(http.StatusInternalServerError, "Internal Server Error")
@@ -36,6 +37,7 @@ func HandleNiceSend() gin.HandlerFunc {
 
 func HandleNiceUpdate() gin.HandlerFunc {
 	return func(c *gin.Context) {
+
 		// // 生成した認証トークンを返却
 		c.JSON(http.StatusOK, "")
 	}
