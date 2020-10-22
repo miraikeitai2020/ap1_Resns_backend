@@ -2,6 +2,7 @@ package controller
 
 import (
 	"ResnsBackend-api2/pkg/server/model"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -28,10 +29,12 @@ func HandleUserSet() gin.HandlerFunc {
 		}
 		user.Id = uuid.String()
 
-		if err := model.Set(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender); err != nil {
+		fmt.Println("3333")
+		if err := model.Set(user); err != nil {
 			context.JSON(http.StatusInternalServerError, "Internal Server Error")
 			return
 		}
+		fmt.Println("4444")
 		// // 生成した認証トークンを返却
 		context.JSON(http.StatusOK, model.User{user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender})
 	}
@@ -44,7 +47,7 @@ func HandleUserUpdate() gin.HandlerFunc {
 			context.JSON(500, gin.H{"message": "Internal Server Error"})
 			return
 		}
-		if err := model.Update(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender); err != nil {
+		if err := model.Update(user); err != nil {
 			context.JSON(http.StatusInternalServerError, "Internal Server Error")
 			return
 		}

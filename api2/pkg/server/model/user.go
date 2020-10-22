@@ -18,19 +18,22 @@ type User struct {
 }
 
 var (
-	user *User
+//user *User
 )
 
-func Set(id, name, image string, year, month, gender int) error {
+func Set(user User) error {
 	stmt, err := db.Conn.Prepare("INSERT INTO users(id,name,image,year,month,gender) VALUES(?,?,?,?,?,?)")
+	fmt.Println(user)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
+	fmt.Println("5555")
 	_, err = stmt.Exec(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender)
 	return err
 }
 
-func Update(id, name, image string, year, month, gender int) error {
+func Update(user User) error {
 	stmt, err := db.Conn.Prepare("UPDATE users SET name=?, image=?, year=?, month=?, gender=? WHERE id=?")
 	if err != nil {
 		return err

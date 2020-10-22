@@ -18,8 +18,8 @@ DROP TABLE IF EXISTS `articles_nice_status`;
 
 ---- create ----
 CREATE TABLE IF NOT EXISTS `resns_app`.`users` (
-`id` VARCHAR(32) NOT NULL COMMENT 'ユーザID',
-`name` VARCHAR(32) NOT NULL COMMENT 'ユーザ名',
+`id` VARCHAR(64) NOT NULL COMMENT 'ユーザID',
+`name` VARCHAR(64) NOT NULL COMMENT 'ユーザ名',
 `image` VARCHAR(128) NOT NULL COMMENT 'プロフィール画像',
 `year` int NOT NULL COMMENT '生年月日(年)',
 `month` int NOT NULL COMMENT '生年月日(月)',
