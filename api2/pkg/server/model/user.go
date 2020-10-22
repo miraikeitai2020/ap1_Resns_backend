@@ -22,21 +22,21 @@ var (
 )
 
 func Set(id, name, image string, year, month, gender int) error {
-	stmt, err := db.Conn.Prepare("INSERT INTO user(id, name, image, year, month, gender) VALUES(?, ?, ?, ?, ?, ?);")
+	stmt, err := db.Conn.Prepare("INSERT INTO users(id,name,image,year,month,gender) VALUES(?,?,?,?,?,?)")
 	if err != nil {
 		return err
 	}
-	_, err = stmt.Exec(id, name, image, year, month, gender)
+	_, err = stmt.Exec(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender)
 	return err
 }
 
 func Update(id, name, image string, year, month, gender int) error {
-	stmt, err := db.Conn.Prepare("UPDATE user SET name=?, image=?, year=?, month=?, gender=? WHERE id=?;")
+	stmt, err := db.Conn.Prepare("UPDATE users SET name=?, image=?, year=?, month=?, gender=? WHERE id=?")
 	if err != nil {
 		return err
 	}
 	defer stmt.Close()
-	if _, updErr := stmt.Exec(user.Name, user.Image, user.Year, user.Month, user.Gender, user.Id); updErr != nil {
+	if _, updErr := stmt.Exec(user.Id, user.Name, user.Image, user.Year, user.Month, user.Gender); updErr != nil {
 		return parseError(updErr)
 	}
 	return nil
@@ -54,7 +54,7 @@ func parseError(err error) error {
 	switch sqlErr.Number {
 	case 1062:
 		//email_UNIQUE error
-		return fmt.Errorf("email already exist")
+		return fmt.Errorf("")
 	}
 	return err
 }
